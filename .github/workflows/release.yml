@@ -17,7 +17,9 @@ jobs:
           ref: vatisoft
       
       - name: Restore NuGet packages
-        run: cd src && nuget restore && cd ..
+        run: |
+          mkdir src/bindings/output
+          cd src && nuget restore && cd ..
         
       - name: Build project
         run: msbuild src/Microsoft.Azure.NotificationHubs.Client/Microsoft.Azure.NotificationHubs.Client.csproj /p:Configuration=Release /p:Version=${{ github.event.inputs.version }}
