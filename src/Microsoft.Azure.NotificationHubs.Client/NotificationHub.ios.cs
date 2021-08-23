@@ -8,6 +8,8 @@ namespace Microsoft.Azure.NotificationHubs.Client
 {
     public partial class NotificationHub
     {
+        static string PlatformInstallationId => MSNotificationHub.GetInstallationId();
+
         static string PlatformPushChannel => MSNotificationHub.GetPushChannel();
         static void PlatformSaveInstallation() => MSNotificationHub.WillSaveInstallation();
 

@@ -16,6 +16,9 @@ namespace Microsoft.Azure.NotificationHubs.Client
             set => PlatformSetUserId(value);
         }
 
+        // Gets the installation ID.
+        public static string InstallationId => PlatformInstallationId;
+
         /// <summary>
         /// Gets the platform specific push channel
         /// </summary>

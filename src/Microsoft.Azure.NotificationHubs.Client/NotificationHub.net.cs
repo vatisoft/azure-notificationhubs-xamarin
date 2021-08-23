@@ -4,6 +4,7 @@ namespace Microsoft.Azure.NotificationHubs.Client
 {
     public partial class NotificationHub
     {
+        static string PlatformInstallationId => throw new NotImplementedException();
         static string PlatformPushChannel => throw new NotImplementedException();
         static void PlatformSaveInstallation() => throw new NotImplementedException();
         static void PlatformInitialize(string connectionString, string hubName) => throw new NotImplementedException();

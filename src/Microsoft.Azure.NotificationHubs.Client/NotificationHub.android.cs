@@ -11,6 +11,8 @@ namespace Microsoft.Azure.NotificationHubs.Client
 {
     public partial class NotificationHub
     {
+        static string PlatformInstallationId => AndroidNotificationHub.InstallationId;
+
         static string PlatformPushChannel => AndroidNotificationHub.PushChannel;
         static void PlatformSaveInstallation() => AndroidNotificationHub.BeginInstallationUpdate();
 
