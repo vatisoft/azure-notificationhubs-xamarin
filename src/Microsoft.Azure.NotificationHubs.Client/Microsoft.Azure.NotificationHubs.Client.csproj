@@ -24,9 +24,7 @@
 
     <!-- NuGet info -->
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <IncludeSymbols>true</IncludeSymbols>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Microsoft.Azure.NotificationHubs.Client</PackageId>
     <PackageVersion>$(Version).0</PackageVersion>
