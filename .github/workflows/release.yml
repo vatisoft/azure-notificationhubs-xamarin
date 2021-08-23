@@ -1,0 +1,28 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Build version (major.minor.patch)'
+        required: true
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ref: vatisoft
+      
+      - name: Restore NuGet packages
+        run: cd src && nuget restore && cd ..
+        
+      - name: Build project
+        run: msbuild src/Microsoft.Azure.NotificationHubs.Client/Microsoft.Azure.NotificationHubs.Client.csproj /p:Configuration=Release /p:Version=${{ github.event.inputs.version }}
+        
+      - name: Push to GitHub
+        run: |
+          dotnet nuget add source https://nuget.pkg.github.com/vatisoft/index.json -n vatisoft -u vatisoft -p ${{ secrets.PACKAGE_TOKEN }} --store-password-in-clear-text
+          dotnet nuget push src/Microsoft.Azure.NotificationHubs.Client/bin/Release/*.nupkg --source "vatisoft"
