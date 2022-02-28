@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras/2.0.54">
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.22">
   <PropertyGroup>
     <TargetFrameworks>Xamarin.iOS10;Xamarin.TVOS10;Xamarin.Mac20</TargetFrameworks>
     <IsBindingProject>true</IsBindingProject>
@@ -10,17 +10,22 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryUrl>https://github.com/Azure/azure-notificationhubs-xamarin.git</RepositoryUrl> 
+    <RepositoryType>git</RepositoryType> 
     <PackageId>Xamarin.Azure.NotificationHubs.iOS</PackageId>
     <Title>Azure Notification Hubs for Xamarin.iOS, Xamarin.Mac and Xamarin.TVOS</Title>
     <PackageDescription>Xamarin.iOS, Xamarin.Mac and Xamarin.TVOS Bindings for Azure Notification Hubs.</PackageDescription>
+    <PackageProjectUrl>https://github.com/Azure/azure-notificationhubs-xamarin/</PackageProjectUrl>
     <Authors>Microsoft</Authors>
     <Owners>Microsoft</Owners>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
-    <PackageIconUrl>https://raw.githubusercontent.com/xamarin/XamarinComponents/master/XPlat/AzureMessaging/component/icons/aznh-icon-128x128.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Azure/azure-notificationhubs-xamarin/main/.github/icons/aznh-icon-128x128.png</PackageIconUrl>
+    <PackageIcon>aznh-icon-128x128.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://go.microsoft.com/fwlink/?linkid=864962</PackageProjectUrl>
-    <PackageLicenseUrl>https://go.microsoft.com/fwlink/?linkid=865062</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageVersion>3.1.1</PackageVersion>
+    <PackageVersion>3.1.5</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
@@ -77,6 +82,10 @@
 
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true'" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\.github\icons\aznh-icon-128x128.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   
 </Project>
